@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     /* Apply saved theme before paint to avoid a flash */
@@ -39,7 +39,7 @@
         <a href="#projects">Projects</a>
         <a href="#experience" class="nav-optional">Experience</a>
         <a href="#about" class="nav-optional">About</a>
-        <a href="assets/files/Joshua-Paddock-Resume.pdf">Resume</a>
+        <a class="nav-cta" href="assets/files/Joshua-Paddock-Resume.pdf">Resume</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -51,46 +51,143 @@
   <main id="main">
 
     <!-- ============ HERO ============ -->
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="container">
-        <div>
-          <span class="label eyebrow">Portfolio · Rev A</span>
-          <h1>Joshua Paddock</h1>
-          <p class="lede">
-            Mathematics &amp; Mechanical Engineering student at Queen's, building robots end to end:
-            mechanical design, electronics, controls and learning. Currently teaching a
-            self-built modified SO-101 arm to pick things up.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="assets/files/Joshua-Paddock-Resume.pdf">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
-              Resume (PDF)
-            </a>
-            <a class="btn" href="https://github.com/joshuapaddock" rel="me">
-              GitHub
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-            </a>
-            <a class="btn" href="https://www.linkedin.com/in/joshua-paddock" rel="me">
-              LinkedIn
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-            </a>
-            <a class="btn" href="mailto:josh.paddock@queensu.ca">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              Email
-            </a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="label eyebrow"><span class="led pulse" aria-hidden="true"></span>Robotics · Mechanical · Controls · ML</p>
+            <h1>Joshua<br>Paddock<span class="tick" aria-hidden="true">.</span></h1>
+            <p class="lede">
+              Mathematics &amp; Mechanical Engineering student at Queen's, building robots end to end:
+              mechanical design, electronics, controls and learning. Currently teaching a
+              self-built modified SO-101 arm to pick things up.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="assets/files/Joshua-Paddock-Resume.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+                Resume (PDF)
+              </a>
+              <a class="btn" href="https://github.com/joshuapaddock" rel="me">
+                GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn" href="https://www.linkedin.com/in/joshua-paddock" rel="me">
+                LinkedIn
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn" href="mailto:josh.paddock@queensu.ca">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                Email
+              </a>
+            </div>
           </div>
+
+          <!-- Live arm sketch: a planar model of the SO-101 follower.
+               main.js animates it (pick-and-place loop, cursor teleop).
+               Without JavaScript it shows this static pose. -->
+          <figure class="rig frame" data-rig>
+            <div class="rig-bar">
+              <span>Fig. 0 — SO-101 follower · side elevation</span>
+              <span class="rig-mode"><span class="led" aria-hidden="true"></span><span data-rig-mode>Auto · pick &amp; place</span></span>
+            </div>
+            <div class="rig-view">
+              <span class="rig-hint" aria-hidden="true"><span class="mouse">Hover to teleoperate · click to grip</span><span class="touch">Tap to move the arm</span></span>
+              <svg viewBox="0 0 520 340" role="img" aria-labelledby="rig-title">
+                <title id="rig-title">Side-view sketch of an SO-101 robot arm picking up a block and placing it down</title>
+                <defs>
+                  <pattern id="rig-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line class="arm-hatch" x1="0" y1="0" x2="0" y2="7"/>
+                  </pattern>
+                </defs>
+
+                <!-- Workspace envelope (R = L1 + L2) and labels -->
+                <path class="arm-env" d="M414.9 300 A250 250 0 1 0 -74.9 300"/>
+                <text x="350" y="62">R250 · REACH</text>
+
+                <!-- Table, hatch, world frame -->
+                <rect x="16" y="300.5" width="488" height="9" fill="url(#rig-hatch)"/>
+                <line class="arm-table" x1="16" y1="300" x2="504" y2="300"/>
+                <g transform="translate(36 284)">
+                  <path class="arm-axis" d="M0 0H26M22 -3l4 3-4 3M0 0V-26M-3 -22l3 -4 3 4"/>
+                  <text x="30" y="3">x</text>
+                  <text x="-3" y="-31">z</text>
+                </g>
+
+                <!-- Pick / place spacing -->
+                <g class="arm-dim">
+                  <line x1="290" y1="314" x2="290" y2="334"/>
+                  <line x1="390" y1="314" x2="390" y2="334"/>
+                  <line x1="290" y1="328" x2="322" y2="328"/>
+                  <line x1="358" y1="328" x2="390" y2="328"/>
+                  <path d="M296 325l-6 3 6 3M384 325l6 3-6 3"/>
+                </g>
+                <text x="340" y="331" text-anchor="middle">100</text>
+
+                <!-- Tool path -->
+                <path id="arm-trail" class="arm-trail" d=""/>
+
+                <!-- Block (resting on the table at spot A) -->
+                <rect id="arm-cube" class="arm-cube" x="-9" y="-9" width="18" height="18" rx="1.5" transform="translate(290 291)"/>
+
+                <!-- Base + shoulder pan housing -->
+                <rect class="arm-body" x="128" y="290" width="84" height="10" rx="2"/>
+                <rect class="arm-servo" x="144" y="262" width="52" height="28" rx="3"/>
+                <rect class="arm-body" x="152" y="254" width="36" height="8" rx="2"/>
+                <rect class="arm-servo" x="155" y="236" width="30" height="22" rx="3"/>
+
+                <!-- Arm: shoulder → elbow → wrist → gripper -->
+                <g transform="translate(170 250)">
+                  <g id="arm-j1" transform="rotate(-76.63)">
+                    <rect class="arm-body" x="-13" y="-10" width="156" height="20" rx="10"/>
+                    <line class="arm-center" x1="0" y1="0" x2="130" y2="0"/>
+                    <rect class="arm-servo" x="114" y="-13" width="32" height="26" rx="3"/>
+                    <circle class="arm-joint" r="8"/>
+                    <circle class="arm-pin" r="2.2"/>
+                    <g id="arm-j2" transform="translate(130 0) rotate(74.95)">
+                      <rect class="arm-body" x="-10" y="-8" width="140" height="16" rx="8"/>
+                      <line class="arm-center" x1="0" y1="0" x2="120" y2="0"/>
+                      <rect class="arm-servo" x="107" y="-11" width="26" height="22" rx="3"/>
+                      <circle class="arm-joint" r="7"/>
+                      <circle class="arm-pin" r="2"/>
+                      <g id="arm-j3" transform="translate(120 0) rotate(91.68)">
+                        <rect class="arm-body" x="-8" y="-8" width="28" height="16" rx="4"/>
+                        <rect class="arm-servo" x="14" y="-15" width="16" height="30" rx="2"/>
+                        <g id="arm-jaw-a" transform="translate(0 -15)"><path class="arm-jaw" d="M27 -5H48L52 0H27Z"/></g>
+                        <g id="arm-jaw-b" transform="translate(0 15)"><path class="arm-jaw" d="M27 5H48L52 0H27Z"/></g>
+                        <line class="arm-center" x1="0" y1="0" x2="56" y2="0"/>
+                        <circle class="arm-joint" r="6"/>
+                        <circle class="arm-pin" r="1.8"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Teleop target -->
+                <g id="arm-target" class="arm-target" transform="translate(-100 -100)">
+                  <circle r="7"/>
+                  <path d="M-14 0h8M6 0h8M0 -14v8M0 6v8"/>
+                </g>
+              </svg>
+            </div>
+            <dl class="rig-readout" aria-hidden="true">
+              <div><dt>Shoulder</dt><dd id="ro-q1">76.6°</dd></div>
+              <div><dt>Elbow</dt><dd id="ro-q2">−75.0°</dd></div>
+              <div><dt>Wrist</dt><dd id="ro-q3">−91.7°</dd></div>
+              <div><dt>Grip</dt><dd id="ro-grip">30 mm</dd></div>
+              <div><dt>TCP x, z</dt><dd id="ro-tcp">150, 90</dd></div>
+              <div><dt>Episode</dt><dd id="ro-ep">000</dd></div>
+            </dl>
+          </figure>
         </div>
 
-        <table class="title-block">
-          <caption>DWG NO. JP-001 · SHEET 1 OF 1</caption>
-          <tbody>
-            <tr><th scope="row">Name</th><td>Joshua T. Paddock</td></tr>
-            <tr><th scope="row">Disciplines</th><td>Mechanical · Electronics · Controls · ML · Perception</td></tr>
-            <tr><th scope="row">Education</th><td>B.A.Sc. Mathematics &amp; Mechanical Engineering, Queen's University — Exp. May 2027</td></tr>
-            <tr><th scope="row">Experience</th><td>Ontario Power Generation · Motion Pac International · Spoolon Manufacturing</td></tr>
-            <tr><th scope="row">Location</th><td>Ontario, Canada</td></tr>
-          </tbody>
-        </table>
+        <!-- The old title block, laid flat -->
+        <dl class="specbar">
+          <div><dt class="label">Education</dt><dd>B.A.Sc. Mathematics &amp; Mechanical Engineering, Queen's University — Exp. May 2027</dd></div>
+          <div><dt class="label">Experience</dt><dd>Ontario Power Generation · Motion Pac International · Spoolon Manufacturing</dd></div>
+          <div><dt class="label">Disciplines</dt><dd>Mechanical · Electronics · Controls · ML · Perception</dd></div>
+          <div><dt class="label">Location</dt><dd>Ontario, Canada</dd></div>
+        </dl>
+        <div class="specbar-caption"><span>Joshua T. Paddock</span><span>DWG NO. JP-001 · Rev B · Sheet 1 of 1</span></div>
       </div>
     </section>
 
@@ -101,8 +198,10 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head">
-          <span class="label">01 /</span>
+          <span class="section-num">01 /</span>
           <h2>Projects</h2>
+          <span class="ruler" aria-hidden="true"></span>
+          <span class="label">Build logs + case studies</span>
         </div>
 
         <div class="filters" role="group" aria-label="Filter projects by discipline">
@@ -115,9 +214,10 @@
 
         <div class="grid">
 
-          <!-- Featured (spans two columns on desktop) -->
+          <!-- Featured (full width) -->
           <a class="card featured" href="projects/so-arm101.html" data-tags="mech elec ml">
-            <div class="card-media">
+            <div class="card-media frame">
+              <span class="card-id">P-01</span>
               <!-- Swap for: <video src="assets/img/so-arm101/teleop-loop.mp4" autoplay muted loop playsinline poster="assets/img/so-arm101/poster.jpg"></video> -->
               <div class="ph" data-label="Video loop · 8–10 s · leader arm driving follower"></div>
             </div>
@@ -125,13 +225,22 @@
               <span class="label">Featured · Personal</span>
               <h3>SO-ARM101 leader–follower arm</h3>
               <p>Self-sourced, self-printed teleoperation arm pair with wrist and overhead cameras, built to collect demonstrations and train a pick-and-place policy.</p>
+              <dl class="card-spec">
+                <div><dt>Started</dt><dd>Jun 2026</dd></div>
+                <div><dt>All-in cost</dt><dd>CA$395</dd></div>
+                <div><dt>Compute</dt><dd>Jetson Orin Nano Super</dd></div>
+                <div><dt>Sim</dt><dd>Isaac Sim</dd></div>
+              </dl>
               <ul class="tags"><li>Mechanical</li><li>Electronics</li><li>Software / ML</li></ul>
               <div class="card-meta"><span class="status wip">In progress</span><span class="card-arrow">Read build log →</span></div>
             </div>
           </a>
 
           <a class="card" href="projects/control-lab.html" data-tags="ctrl">
-            <div class="card-media"><div class="ph" data-label="Step response · before vs after tuning"></div></div>
+            <div class="card-media frame">
+              <span class="card-id">P-02</span>
+              <div class="ph" data-label="Step response · before vs after tuning"></div>
+            </div>
             <div class="card-body">
               <span class="label">Coursework</span>
               <h3>Identifying &amp; stabilizing an unknown plant</h3>
@@ -142,7 +251,10 @@
           </a>
 
           <a class="card" href="projects/breathalyzer.html" data-tags="elec">
-            <div class="card-media"><div class="ph" data-label="Photo · finished breathalyzer with live reading"></div></div>
+            <div class="card-media frame">
+              <span class="card-id">P-03</span>
+              <div class="ph" data-label="Photo · finished breathalyzer with live reading"></div>
+            </div>
             <div class="card-body">
               <span class="label">Personal</span>
               <h3>MQ-3 breathalyzer</h3>
@@ -153,7 +265,10 @@
           </a>
 
           <a class="card" href="projects/pi-camera.html" data-tags="elec mech ml">
-            <div class="card-media"><div class="ph" data-label="Photo · camera body + CAD render"></div></div>
+            <div class="card-media frame">
+              <span class="card-id">P-04</span>
+              <div class="ph" data-label="Photo · camera body + CAD render"></div>
+            </div>
             <div class="card-body">
               <span class="label">Personal</span>
               <h3>Raspberry Pi camera</h3>
@@ -164,7 +279,10 @@
           </a>
 
           <a class="card" href="projects/capstone.html" data-tags="ctrl ml">
-            <div class="card-media"><div class="ph" data-label="Diagram · router → replicas, queues + KV cache"></div></div>
+            <div class="card-media frame">
+              <span class="card-id">P-05</span>
+              <div class="ph" data-label="Diagram · router → replicas, queues + KV cache"></div>
+            </div>
             <div class="card-body">
               <span class="label">Capstone · Team of 5</span>
               <h3>Adaptive routing for LLM inference clusters</h3>
@@ -185,14 +303,16 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-head">
-          <span class="label">02 /</span>
+          <span class="section-num">02 /</span>
           <h2>Experience</h2>
+          <span class="ruler" aria-hidden="true"></span>
+          <span class="label">Co-ops + internships</span>
         </div>
 
-        <ol class="timeline">
+        <ol class="chain">
           <li>
             <div class="when"><span>Apr 2025 – Aug 2026</span><span>Bowmanville, ON</span></div>
-            <div>
+            <div class="what">
               <h3>Ontario Power Generation</h3>
               <div class="role">Fuel Handling Engineering Student · 16-month co-op</div>
               <p>Mechanical design, data tooling and field work supporting the fuelling machines: a radiation-tolerant component redesign, Python analysis tools for motor commands, local-LLM workflow automation, and field team lead on a relay-panel overhaul.</p>
@@ -202,7 +322,7 @@
           </li>
           <li>
             <div class="when"><span>May – Aug 2024</span><span>Cobourg, ON</span></div>
-            <div>
+            <div class="what">
               <h3>Motion Pac International</h3>
               <div class="role">Mechanical Engineer Intern</div>
               <p>Designed custom automation machinery in SolidWorks across 12+ projects, including pneumatic capping, deburring and conveyor handling equipment, and proposed an automated weld and leak-test system.</p>
@@ -212,7 +332,7 @@
           </li>
           <li>
             <div class="when"><span>Summers 2022 &amp; 2023</span><span>Cobourg, ON</span></div>
-            <div>
+            <div class="what">
               <h3>Spoolon Manufacturing</h3>
               <div class="role">Mechanical Engineer Intern</div>
               <p>Digitized 250+ legacy tooling drawings in AutoCAD and used FEA-driven relief holes to cut spool material use by 5%.</p>
@@ -226,23 +346,29 @@
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head">
-          <span class="label">03 /</span>
+          <span class="section-num">03 /</span>
           <h2>Toolkit</h2>
+          <span class="ruler" aria-hidden="true"></span>
+          <span class="label">Hardware → software</span>
         </div>
         <div class="skills">
-          <div>
+          <div class="module">
+            <div class="module-head"><span class="label">Mod 01</span><span class="led" aria-hidden="true"></span></div>
             <h3>Mechanical</h3>
             <ul><li>SolidWorks, GD&amp;T</li><li>FEA</li><li>AutoCAD drawings</li><li>3D printing &amp; rapid prototyping</li><li>Pneumatics</li></ul>
           </div>
-          <div>
+          <div class="module">
+            <div class="module-head"><span class="label">Mod 02</span><span class="led" aria-hidden="true"></span></div>
             <h3>Electronics &amp; embedded</h3>
             <ul><li>ESP32</li><li>Raspberry Pi</li><li>Jetson Orin Nano Super</li><li>Sensor integration &amp; calibration</li></ul>
           </div>
-          <div>
+          <div class="module">
+            <div class="module-head"><span class="label">Mod 03</span><span class="led" aria-hidden="true"></span></div>
             <h3>Software &amp; ML</h3>
             <ul><li>Python, C++, C</li><li>ROS 2</li><li>scikit-learn, pandas</li><li>Local LLM inference</li></ul>
           </div>
-          <div>
+          <div class="module">
+            <div class="module-head"><span class="label">Mod 04</span><span class="led" aria-hidden="true"></span></div>
             <h3>Controls &amp; math</h3>
             <ul><li>PID &amp; frequency-domain design</li><li>System identification</li><li>Optimal control, dec-POMDPs</li><li>MATLAB</li></ul>
           </div>
@@ -254,27 +380,29 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section-head">
-          <span class="label">04 /</span>
+          <span class="section-num">04 /</span>
           <h2>About</h2>
+          <span class="ruler" aria-hidden="true"></span>
+          <span class="label">Off the clock</span>
         </div>
-      </div>
-      <div class="container about">
-        <div>
-          <p>
-            I'm in my fifth year of Mathematics &amp; Mechanical Engineering at Queen's University,
-            graduating in May 2027. I like problems where the math and the machine meet: designing
-            the hardware, wiring it, writing the controller, and then figuring out how to make it learn.
-          </p>
-          <p>Outside of engineering, I'm usually golfing, at the gym, or on a climbing wall. I also spend my downtime reading frontier AI lab papers and digging through balance sheets to picks stocks to beat the S&P500.
-        </div>
-        <div>
-          <span class="label">Contact</span>
-          <ul class="contact-list">
-            <li><span>Email</span><a href="mailto:jtpaddock7@gmail.com">jtpaddock7@gmail.com</a></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/joshua-paddock">in/joshua-paddock</a></li>
-            <li><span>GitHub</span><a href="https://github.com/joshuapaddock">joshuapaddock</a></li>
-            <li><span>Resume</span><a href="assets/files/Joshua-Paddock-Resume.pdf">PDF</a></li>
-          </ul>
+        <div class="about">
+          <div>
+            <p>
+              I'm in my fifth year of Mathematics &amp; Mechanical Engineering at Queen's University,
+              graduating in May 2027. I like problems where the math and the machine meet: designing
+              the hardware, wiring it, writing the controller, and then figuring out how to make it learn.
+            </p>
+            <p>Outside of engineering, I'm usually golfing, at the gym, or on a climbing wall. I also spend my downtime reading frontier AI lab papers and digging through balance sheets to pick stocks to beat the S&amp;P 500.</p>
+          </div>
+          <div class="comms frame">
+            <div class="comms-head"><span class="label">Contact</span><span class="led pulse" aria-hidden="true"></span></div>
+            <ul class="contact-list">
+              <li><span>Email</span><a href="mailto:jtpaddock7@gmail.com">jtpaddock7@gmail.com</a></li>
+              <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/joshua-paddock">in/joshua-paddock</a></li>
+              <li><span>GitHub</span><a href="https://github.com/joshuapaddock">joshuapaddock</a></li>
+              <li><span>Resume</span><a href="assets/files/Joshua-Paddock-Resume.pdf">PDF</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -285,6 +413,7 @@
     <div class="container">
       <span>© <span data-year>2026</span> Joshua Paddock</span>
       <span>Hand-built · Hosted on GitHub Pages</span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 </body>
