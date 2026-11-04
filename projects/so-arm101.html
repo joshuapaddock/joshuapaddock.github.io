@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SO-ARM101 leader–follower arm — Joshua Paddock</title>
-  <meta name="description" content="A self-sourced, self-printed SO-ARM101 leader-follower arm with wrist and overhead cameras, built to train a pick-and-place policy from teleoperated demonstrations.">
+  <meta name="description" content="A self-sourced, self-printed SO-ARM101 leader-follower arm with wrist and overhead cameras, used to train an ACT imitation-learning policy for pick-and-place from teleoperated demonstrations, with residual RL fine-tuning next.">
   <meta name="robots" content="noindex"><!-- delete at launch -->
   <meta name="theme-color" content="#02070A">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -35,22 +35,22 @@
     <header class="project-head">
       <span class="label">Personal project · Featured</span>
       <h1>SO-ARM101 leader–follower arm</h1>
-      <p class="lede">An open-source, 3D-printed arm pair that I sourced part by part and printed myself. I move the leader arm by hand, the follower mirrors it, and cameras record each demonstration so a policy can learn to repeat the task on its own.</p>
+      <p class="lede">An open-source, 3D-printed arm pair that I sourced part by part and printed myself. I move the leader arm by hand, the follower mirrors it, and cameras record each demonstration. From those demonstrations I trained an ACT imitation-learning policy that runs the task on its own; next, residual RL to close its gaps.</p>
 
       <dl class="spec">
         <div><dt class="label">Status</dt><dd><span class="status wip">In progress</span></dd></div>
         <div><dt class="label">Dates</dt><dd>Jun 2026 – present</dd></div>
         <div><dt class="label">Role</dt><dd>Solo</dd></div>
-        <div><dt class="label">Tools</dt><dd>Feetech bus servos, 3D printing, Python, Isaac Sim, Jetson Orin Nano Super</dd></div>
+        <div><dt class="label">Tools</dt><dd>ACT, Python, Feetech bus servos, 3D printing, Isaac Sim, Jetson Orin Nano Super</dd></div>
       </dl>
     </header>
     <figure class="hero-media">
-      <div class="ph" data-label="Video · 10–20 s · leader arm teleoperating the follower through a pick-and-place"></div>
-      <figcaption>Teleoperation: the follower arm mirrors the leader in real time.</figcaption>
+      <div class="ph" data-label="Video · 10–20 s · the ACT policy doing the pick-and-place on its own"></div>
+      <figcaption>The ACT policy running the pick-and-place autonomously.</figcaption>
     </figure>
     <section class="tldr" aria-label="Summary">
       <div><span class="label">Problem</span><p>Learn how robot policies are trained, end to end, on hardware I understand down to the servo.</p></div>
-      <div><span class="label">What I built</span><p>A full leader–follower pair with wrist and overhead cameras for recording teleoperated demonstrations.</p></div>
+      <div><span class="label">What I built</span><p>A full leader–follower pair with wrist and overhead cameras, a teleoperated demonstration set, and an ACT policy that runs the task autonomously.</p></div>
       <div><span class="label">Result</span><p class="metric">CA$395</p><p>All-in cost, self-sourced, vs. about $700 for the assembled kit.</p></div>
     </section>
     <article class="prose">
@@ -60,7 +60,8 @@
         demonstrations, and train a policy that does the task by itself. I sourced every part myself and printed the
         frame instead of buying the assembled kit. It cost about half as much, and I had to understand every
         part of the hardware along the way.</p>
-        <p><span class="todo">TODO: a sentence on what you want to learn next and where this leads (e.g. your QDD arm).</span></p>
+        <p>Imitation alone leaves gaps where the policy drifts outside what the demonstrations covered. Next I'm implementing ResFiT from Amazon FAR, which fine-tunes a behaviour-cloned policy with residual reinforcement learning, on top of the ACT policy.</p>
+        <p><span class="todo">TODO: where this leads long term (e.g. your QDD arm).</span></p>
       </section>
       <section class="prose-section">
         <h2><span class="num">02</span> Hardware</h2>
@@ -80,7 +81,8 @@
         RTX 5080 laptop. I'm working through NVIDIA's Isaac Sim-to-Real SO-101 workshop to set up the
         simulation and training side.</p>
         <figure><div class="ph" data-label="Diagram · leader arm → follower arm → cameras + joint states → episode dataset → policy training → deployment"></div><figcaption>Data flow from teleoperation to a trained policy.</figcaption></figure>
-        <p><span class="todo">TODO: recording format, frame rate, number of episodes, which policy architecture you train.</span></p>
+        <p>The policy is ACT (Action Chunking with Transformers), which predicts short chunks of future joint actions from the camera images and joint states.</p>
+        <p><span class="todo">TODO: recording format, frame rate, number of episodes, training time, and success rate over N trials.</span></p>
       </section>
       <section class="prose-section">
         <h2><span class="num">04</span> Edge inference on the Jetson</h2>
@@ -102,7 +104,7 @@
           <li><time>Jun 2026</time>Started the edge AI platform: local LLM inference benchmarks on the Jetson Orin Nano Super.</li>
           <li><time><span class="todo">TODO: date</span></time>Sourced the arm piecemeal across AliExpress, Alibaba and Amazon orders.</li>
           <li><time>Sep 2026</time>Leader and follower arms assembled; started the Isaac Sim-to-Real SO-101 workshop.</li>
-          <li><time><span class="todo">TODO: date</span></time><span class="todo">TODO: next milestone</span></li>
+          <li><time><span class="todo">TODO: date</span></time>Reliable teleoperation; recorded demonstrations and trained an ACT policy that runs the pick-and-place autonomously.</li>
         </ol>
       </section>
       <section class="prose-section">
@@ -111,9 +113,10 @@
           <li class="done">Source parts and print the frame</li>
           <li class="done">Assemble leader and follower arms</li>
           <li class="done">Mount wrist and overhead cameras</li>
-          <li>Calibrate and teleoperate reliably</li>
-          <li>Record demonstrations of the pick-and-place task</li>
-          <li>Train a policy and run the task autonomously</li>
+          <li class="done">Calibrate and teleoperate reliably</li>
+          <li class="done">Record demonstrations of the pick-and-place task</li>
+          <li class="done">Train an ACT policy and run the task autonomously</li>
+          <li>Fine-tune with residual RL (ResFiT) to close the gaps</li>
           <li>Move follower control onto the Jetson in real time</li>
           <li>Language interface: LLM tool calls driving the arm</li>
         </ul>

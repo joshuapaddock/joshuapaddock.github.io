@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joshua Paddock — Robotics &amp; Mechanical Engineering</title>
-  <meta name="description" content="Portfolio of Joshua Paddock, Mathematics & Mechanical Engineering student at Queen's University, building robots end to end: mechanical design, electronics, controls, programming, and learning.">
+  <title>Joshua Paddock — Robot Learning &amp; Controls</title>
+  <meta name="description" content="Portfolio of Joshua Paddock, Mathematics & Mechanical Engineering student at Queen's University working on robot learning, controls and ML systems: imitation learning on a self-built SO-101 arm, mixture-of-experts inference routing, and engineering automation at Ontario Power Generation.">
 
   <!-- UNDER CONSTRUCTION: keeps search engines from indexing placeholders.
        Delete this line (on every page) when you're ready to launch. -->
   <meta name="robots" content="noindex">
 
   <meta name="theme-color" content="#02070A">
-  <meta property="og:title" content="Joshua Paddock — Robotics & Mechanical Engineering">
-  <meta property="og:description" content="Mechanical design, electronics, controls, programming and learning, built end to end.">
+  <meta property="og:title" content="Joshua Paddock — Robot Learning & Controls">
+  <meta property="og:description" content="Robot learning, controls, ML systems and engineering automation.">
   <meta property="og:type" content="website">
   <!-- <meta property="og:image" content="https://joshuapaddock.github.io/assets/img/og.jpg"> 1200x630 image shown when the link is shared -->
 
@@ -43,22 +43,24 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="top">
       <div class="container">
+        <p class="label kicker">Robot&nbsp;learning&nbsp;· Controls&nbsp;· ML&nbsp;systems&nbsp;· Automation</p>
         <h1>Joshua<br>Paddock</h1>
         <p class="lede">
-          Mathematics &amp; Mechanical Engineering student at Queen's, building robots end to end:
-          mechanical design, electronics, controls and learning. Currently teaching a
-          self-built modified SO-101 arm to pick things up.
+          Mathematics &amp; Mechanical Engineering student at Queen's, working on robot learning and control.
+          I trained an imitation-learning policy (ACT) on a self-built SO-101 arm and I'm now adding
+          residual RL to close its gaps.
         </p>
         <div class="hero-links">
           <a class="btn btn-primary" href="assets/files/Joshua-Paddock-Resume.pdf">Resume (PDF)</a>
           <a href="https://github.com/joshuapaddock" rel="me">GitHub</a>
           <a href="https://www.linkedin.com/in/joshua-paddock" rel="me">LinkedIn</a>
-          <a href="mailto:josh.paddock@queensu.ca">Email</a>
+          <a href="mailto:jtpaddock7@gmail.com">Email</a>
         </div>
       </div>
     </section>
 
     <!-- ============ PROJECTS ============
+         Ordered by relevance to the roles you're targeting.
          To add a project: copy one <li> block below, then
          copy drafts/_project-template.html into projects/ and fill it in. -->
     <section class="section" id="projects">
@@ -72,11 +74,25 @@
             <a class="project" href="projects/so-arm101.html">
               <div>
                 <h3>SO-ARM101 leader–follower arm</h3>
-                <p>Self-sourced, self-printed teleoperation arm pair with wrist and overhead cameras, built to collect demonstrations and train a pick-and-place policy.</p>
+                <p>Self-built teleoperation arm pair with wrist and overhead cameras. I recorded demonstrations and trained an ACT imitation-learning policy that runs the pick-and-place on its own; next, residual RL fine-tuning (ResFiT) to close its gaps.</p>
               </div>
               <div class="project-meta">
-                <span class="label">Featured · Personal</span>
-                <span class="label">Mechanical · Electronics · Software&nbsp;/&nbsp;ML</span>
+                <span class="label">Featured&nbsp;· Personal</span>
+                <span class="label">Imitation learning&nbsp;· ACT&nbsp;· Residual&nbsp;RL</span>
+                <span class="status wip">In progress</span>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="projects/capstone.html">
+              <div>
+                <h3>Adaptive routing for LLM inference clusters</h3>
+                <p>Measuring mixture-of-experts expert skew on SWE-bench inputs to plan expert placement across a 72-GPU rack, with a custom router that uses prefix-aware caching (SGLang / vLLM) to maximize GPU utilization.</p>
+              </div>
+              <div class="project-meta">
+                <span class="label">Capstone&nbsp;· Team of 5</span>
+                <span class="label">MoE inference&nbsp;· SGLang&nbsp;/&nbsp;vLLM&nbsp;· Stochastic control</span>
                 <span class="status wip">In progress</span>
               </div>
               <span class="project-arrow" aria-hidden="true">↗</span>
@@ -90,21 +106,7 @@
               </div>
               <div class="project-meta">
                 <span class="label">Coursework</span>
-                <span class="label">Controls</span>
-                <span class="status done">Complete</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <li>
-            <a class="project" href="projects/breathalyzer.html">
-              <div>
-                <h3>MQ-3 breathalyzer</h3>
-                <p>Metal-oxide alcohol sensing, from burn-in and calibration to a live reading on a display.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Personal</span>
-                <span class="label">Electronics</span>
+                <span class="label">System ID&nbsp;· PID&nbsp;· Frequency domain</span>
                 <span class="status done">Complete</span>
               </div>
               <span class="project-arrow" aria-hidden="true">↗</span>
@@ -118,22 +120,22 @@
               </div>
               <div class="project-meta">
                 <span class="label">Personal</span>
-                <span class="label">Electronics · Mechanical · Software</span>
+                <span class="label">Raspberry Pi&nbsp;· Circuit design&nbsp;· Python</span>
                 <span class="status done">Complete</span>
               </div>
               <span class="project-arrow" aria-hidden="true">↗</span>
             </a>
           </li>
           <li>
-            <a class="project" href="projects/capstone.html">
+            <a class="project" href="projects/breathalyzer.html">
               <div>
-                <h3>Adaptive routing for LLM inference clusters</h3>
-                <p>Request routing as an optimal control problem under latency and throughput targets.</p>
+                <h3>MQ-3 breathalyzer</h3>
+                <p>Metal-oxide alcohol sensing, from burn-in and calibration to a live reading on a display.</p>
               </div>
               <div class="project-meta">
-                <span class="label">Capstone · Team of 5</span>
-                <span class="label">Controls · Software&nbsp;/&nbsp;ML</span>
-                <span class="status wip">In progress</span>
+                <span class="label">Personal</span>
+                <span class="label">ESP32&nbsp;· Sensor calibration</span>
+                <span class="status done">Complete</span>
               </div>
               <span class="project-arrow" aria-hidden="true">↗</span>
             </a>
@@ -156,8 +158,15 @@
             <div class="when">Apr 2025 – Aug 2026<span>Bowmanville, ON</span></div>
             <div>
               <h3>Ontario Power Generation</h3>
-              <div class="role">Fuel Handling Engineering Student · 16-month co-op</div>
-              <p>Mechanical design, data tooling and field work supporting the fuelling machines: a radiation-tolerant component redesign, Python analysis tools for motor commands, local-LLM workflow automation, and field team lead on a relay-panel overhaul.</p>
+              <div class="role">Fuel Handling Engineering Student&nbsp;· 16-month co-op</div>
+              <p>Mechanical design, data tooling and field work supporting the fuelling machines.</p>
+              <ul>
+                <li>Automated data collection and reporting with flows and interactive apps: once set up, they turn engineering data into management insight with no manual upkeep.</li>
+                <li>Built Python tools for engineering problems, including validation of collected encoder data and Gaussian heat maps mapping which inverter commands needed testing on new motors.</li>
+                <li>Designed parts in CAD, including a radiation-tolerant component redesign, and tested prototypes in the field for fit and size.</li>
+                <li>Automated workflows with locally hosted LLMs.</li>
+                <li>Led the field team on a relay-panel overhaul.</li>
+              </ul>
               <!-- Enable once OPG approves the case study:
               <a class="more" href="projects/opg.html">Case study →</a> -->
             </div>
@@ -167,7 +176,10 @@
             <div>
               <h3>Motion Pac International</h3>
               <div class="role">Mechanical Engineer Intern</div>
-              <p>Designed custom automation machinery in SolidWorks across 12+ projects, including pneumatic capping, deburring and conveyor handling equipment, and proposed an automated weld and leak-test system.</p>
+              <ul>
+                <li>Designed custom automation machinery in SolidWorks across 12+ projects, including pneumatic capping, deburring and conveyor handling equipment.</li>
+                <li>Proposed an automated weld and leak-test system.</li>
+              </ul>
               <!-- Enable once Motion Pac approves:
               <a class="more" href="projects/motion-pac.html">Case study →</a> -->
             </div>
@@ -177,35 +189,47 @@
             <div>
               <h3>Spoolon Manufacturing</h3>
               <div class="role">Mechanical Engineer Intern</div>
-              <p>Digitized 250+ legacy tooling drawings in AutoCAD and used FEA-driven relief holes to cut spool material use by 5%.</p>
+              <ul>
+                <li>Digitized 250+ legacy tooling drawings in AutoCAD.</li>
+                <li>Used FEA to place relief holes that cut spool material use by 5%.</li>
+              </ul>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
+    <!-- ============ SKILLS ============
+         Ordered by what you want to be hired for: strongest first. -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head">
-          <h2>Toolkit</h2>
+          <h2>Skills</h2>
         </div>
         <div class="skills">
           <div>
-            <h3>Mechanical</h3>
-            <ul><li>SolidWorks, GD&amp;T</li><li>FEA</li><li>AutoCAD drawings</li><li>3D printing &amp; rapid prototyping</li><li>Pneumatics</li></ul>
-          </div>
-          <div>
-            <h3>Electronics &amp; embedded</h3>
-            <ul><li>ESP32</li><li>Raspberry Pi</li><li>Jetson Orin Nano Super</li><li>Sensor integration &amp; calibration</li></ul>
-          </div>
-          <div>
-            <h3>Software &amp; ML</h3>
-            <ul><li>Python, C++, C</li><li>ROS 2</li><li>scikit-learn, pandas</li><li>Local LLM inference</li></ul>
+            <h3>Robot learning</h3>
+            <ul><li>Imitation learning (ACT)</li><li>Teleoperation &amp; demonstration data</li><li>Residual RL fine-tuning (ResFiT, in progress)</li></ul>
           </div>
           <div>
             <h3>Controls &amp; math</h3>
-            <ul><li>PID &amp; frequency-domain design</li><li>System identification</li><li>Optimal control, dec-POMDPs</li><li>MATLAB</li></ul>
+            <ul><li>PID &amp; frequency-domain design</li><li>System identification</li><li>Stochastic processes</li><li>Optimal control, dec-POMDPs</li><li>MATLAB</li></ul>
+          </div>
+          <div>
+            <h3>ML systems</h3>
+            <ul><li>Mixture-of-experts inference</li><li>Expert placement &amp; request routing</li><li>SGLang, vLLM, prefix-aware caching</li><li>Local &amp; edge LLM inference (Jetson)</li></ul>
+          </div>
+          <div>
+            <h3>Software &amp; automation</h3>
+            <ul><li>Python: data validation, analysis &amp; visualization</li><li>Automated data flows &amp; interactive apps</li><li>C++, C</li><li>ROS 2</li><li>pandas, scikit-learn</li></ul>
+          </div>
+          <div>
+            <h3>Mechanical design</h3>
+            <ul><li>SolidWorks, GD&amp;T</li><li>FEA</li><li>AutoCAD drawings</li><li>Prototyping &amp; field fit testing</li><li>3D printing, pneumatics</li></ul>
+          </div>
+          <div>
+            <h3>Electronics &amp; embedded</h3>
+            <ul><li>Jetson Orin Nano Super</li><li>ESP32, Raspberry Pi</li><li>Serial bus servos</li><li>Sensor integration &amp; calibration</li></ul>
           </div>
         </div>
       </div>
@@ -223,6 +247,7 @@
               I'm in my fifth year of Mathematics &amp; Mechanical Engineering at Queen's University,
               graduating in May 2027. I like problems where the math and the machine meet: designing
               the hardware, wiring it, writing the controller, and then figuring out how to make it learn.
+              In coursework, I'm most drawn to control theory and stochastic processes.
             </p>
             <p>Outside of engineering, I'm usually golfing, at the gym, or on a climbing wall. I also spend my downtime reading frontier AI lab papers and digging through balance sheets to pick stocks to beat the S&amp;P 500.</p>
           </div>

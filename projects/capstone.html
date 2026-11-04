@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adaptive routing for LLM inference clusters — Joshua Paddock</title>
-  <meta name="description" content="Capstone project: LLM inference request routing formulated as an optimal control problem.">
+  <meta name="description" content="Capstone project: expert placement and request routing for mixture-of-experts LLM inference on a 72-GPU rack, using measured expert skew, prefix-aware caching (SGLang / vLLM) and a stochastic-control routing policy.">
   <meta name="robots" content="noindex"><!-- delete at launch -->
   <meta name="theme-color" content="#02070A">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -35,7 +35,7 @@
     <header class="project-head">
       <span class="label">Capstone · Team of 5</span>
       <h1>Adaptive routing for LLM inference clusters</h1>
-      <p class="lede">Formulating single-rack LLM request routing as an optimal control problem: a KV-cache-aware policy that maps prefill and decode queues and replica capacity to request placements, under time-to-first-token (TTFT) and throughput targets.</p>
+      <p class="lede">Expert placement and request routing for mixture-of-experts (MoE) LLM inference on a single 72-GPU rack. We measure expert skew, how unevenly a model's experts are used, and use it to decide where experts live and where requests go: a custom router that uses prefix-aware caching (SGLang / vLLM) to maximize GPU utilization under time-to-first-token (TTFT) and throughput targets.</p>
 
       <dl class="spec">
         <div><dt class="label">Status</dt><dd><span class="status wip">In progress</span></dd></div>
@@ -45,13 +45,13 @@
       </dl>
     </header>
     <figure class="hero-media">
-      <div class="ph" data-label="Diagram · requests → router → replicas (prefill / decode queues, KV cache)"></div>
+      <div class="ph" data-label="Diagram · requests → prefix-aware router → GPUs, with experts placed from the skew map"></div>
       <figcaption>System being controlled.</figcaption>
     </figure>
     <section class="tldr" aria-label="Summary">
-      <div><span class="label">Problem</span><p>Decide where each inference request runs so latency and throughput targets hold as load shifts.</p></div>
-      <div><span class="label">Approach</span><p>Model routing as a stochastic control problem (a Markov decision process) and derive a policy from it.</p></div>
-      <div><span class="label">Status</span><p class="metric">In progress</p><p>Results will be posted as the project develops.</p></div>
+      <div><span class="label">Problem</span><p>Place experts and route requests so a 72-GPU rack stays busy while latency and throughput targets hold as load shifts.</p></div>
+      <div><span class="label">Approach</span><p>Measure expert skew on real workloads, then route with a custom policy; routing is modelled as a stochastic control problem (a Markov decision process).</p></div>
+      <div><span class="label">Status</span><p class="metric">In progress</p><p>Two expert-skew experiments running on 2× RTX A5500. Results will be posted as they come in.</p></div>
     </section>
     <!-- Team project: check with your teammates and supervisors before publishing details. -->
 
@@ -63,7 +63,20 @@
         can miss latency targets under bursty traffic.</p>
       </section>
       <section class="prose-section">
-        <h2><span class="num">02</span> Formulation</h2>
+        <h2><span class="num">02</span> Measuring expert skew</h2>
+        <p>In an MoE model each token is sent to a few of many experts, and some experts get far more traffic than
+        others. That skew decides how experts should be spread across GPUs. We're running two experiments on
+        2× NVIDIA RTX A5500:</p>
+        <ul>
+          <li><strong>Single pass:</strong> expert skew across one pass of SWE-bench inputs.</li>
+          <li><strong>Multi-pass:</strong> expert skew across repeated passes over similar inputs.</li>
+        </ul>
+        <p>The skew map drives expert allocation across a 72-GPU rack, and a custom routing algorithm that uses
+        prefix-aware caching in SGLang or vLLM to maximize GPU utilization.</p>
+        <p><span class="todo">TODO: model under test, and results once the experiments finish.</span></p>
+      </section>
+      <section class="prose-section">
+        <h2><span class="num">03</span> Formulation</h2>
         <ul>
           <li><strong>State:</strong> prefill and decode queue lengths, KV-cache usage and capacity per replica.</li>
           <li><strong>Action:</strong> which replica receives the next request.</li>
@@ -72,11 +85,11 @@
         <p><span class="todo">TODO: how you keep the state space tractable, and the planned evaluation (e.g. P99 latency, simulation).</span></p>
       </section>
       <section class="prose-section">
-        <h2><span class="num">03</span> My contribution</h2>
+        <h2><span class="num">04</span> My contribution</h2>
         <p><span class="todo">TODO: your specific part of the team's work.</span></p>
       </section>
       <section class="prose-section">
-        <h2><span class="num">04</span> Next steps</h2>
+        <h2><span class="num">05</span> Next steps</h2>
         <ul class="checklist">
           <li><span class="todo">TODO: milestone</span></li>
           <li><span class="todo">TODO: milestone</span></li>
