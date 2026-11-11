@@ -168,16 +168,20 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.88em; }
 .section-head h2 { margin: 0; }
 .section-intro { color: var(--ink-2); max-width: 40em; margin-bottom: 28px; }
 
-/* ---------- Projects: one row each ----------
-   To add a thumbnail later, put an <img> first inside the <a>
-   and give the row class="project has-thumb". */
+/* ---------- Rows: projects and jobs ----------
+   The whole row is clickable through the title link (its ::after covers
+   the row); skill links sit above it so they stay clickable themselves.
+   To add a thumbnail later, put an <img> first inside the <li>
+   and give it class="project has-thumb". */
 .projects { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
-.projects > li { margin: 0; border-bottom: 1px solid var(--rule); }
 .project {
+  position: relative; margin: 0; border-bottom: 1px solid var(--rule);
   display: grid; grid-template-columns: minmax(0, 1fr) 300px 28px; gap: 8px 40px; align-items: start;
-  padding: 26px 0; color: inherit; text-decoration: none;
+  padding: 26px 0;
 }
-.project h3 { margin: 0 0 6px; font-size: clamp(1.2rem, 2vw, 1.42rem); letter-spacing: -0.01em; transition: color 0.15s ease; }
+.project h3, .role-row h3 { margin: 0 0 6px; font-size: clamp(1.2rem, 2vw, 1.42rem); letter-spacing: -0.01em; }
+.project h3 a, .role-row h3 a { color: inherit; text-decoration: none; transition: color 0.15s ease; }
+.project h3 a::after, .role-row h3 a::after { content: ""; position: absolute; inset: 0; }
 .project p { margin: 0; color: var(--ink-2); max-width: 40em; }
 .project-meta { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
 .project-meta .label { line-height: 1.5; }
@@ -185,18 +189,28 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.88em; }
   padding-top: 4px; font-size: 1.2rem; color: var(--ink-3); text-align: right;
   transition: color 0.15s ease, transform 0.15s ease;
 }
-.project:hover { color: inherit; }
-.project:hover h3 { color: var(--blue); }
-.project:hover .project-arrow { color: var(--orange); transform: translate(2px, -2px); }
+.project:hover h3 a, .role-row:hover h3 a { color: var(--blue); }
+.project:hover .project-arrow, .role-row:hover .project-arrow { color: var(--orange); transform: translate(2px, -2px); }
 .project.has-thumb { grid-template-columns: 200px minmax(0, 1fr) 300px 28px; }
 .project.has-thumb > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-@media (prefers-reduced-motion: reduce) { .project:hover .project-arrow { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .project:hover .project-arrow, .role-row:hover .project-arrow { transform: none; } }
 @media (max-width: 760px) {
   .project, .project.has-thumb { grid-template-columns: minmax(0, 1fr) 24px; column-gap: 12px; }
-  .project-meta { grid-row: 2; grid-column: 1; flex-direction: row; flex-wrap: wrap; gap: 4px 16px; padding-top: 4px; }
+  .project-meta { grid-row: 2; grid-column: 1; gap: 6px; padding-top: 4px; }
   .project-arrow { grid-row: 1; grid-column: 2; }
   .project.has-thumb > img { grid-column: 1 / -1; }
 }
+
+/* Skill links: on rows they jump to the Skills list, on pages back to it */
+.tags { display: flex; flex-wrap: wrap; gap: 6px 8px; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.tags a {
+  position: relative; z-index: 1;
+  padding: 3px 8px; border: 1px solid var(--rule-strong); border-radius: 2px;
+  color: var(--ink-2); text-decoration: none; white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.tags a:hover { color: var(--blue); border-color: var(--blue); }
+.tags > span { color: var(--ink-3); padding: 4px 4px 4px 0; }
 
 .status { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; }
 .status::before { content: ""; width: 6px; height: 6px; background: var(--ink-3); }
@@ -205,34 +219,47 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.88em; }
 
 /* ---------- Experience ---------- */
 .roles { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
-.roles > li {
-  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 8px 40px;
+.role-row {
+  position: relative;
+  display: grid; grid-template-columns: 220px minmax(0, 1fr) 28px; gap: 8px 40px; align-items: start;
   padding: 26px 0; margin: 0; border-bottom: 1px solid var(--rule);
 }
 .roles .when { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.02em; color: var(--ink-2); padding-top: 5px; }
 .roles .when span { display: block; color: var(--ink-3); }
-.roles h3 { margin: 0 0 2px; font-size: clamp(1.2rem, 2vw, 1.42rem); letter-spacing: -0.01em; }
+.role-row h3 { margin-bottom: 2px; }
 .roles .role { color: var(--blue); margin-bottom: 10px; font-size: 0.95rem; }
-.roles p { color: var(--ink-2); margin-bottom: 0; max-width: 46em; }
-.roles ul { list-style: none; padding: 0; margin: 0; color: var(--ink-2); max-width: 46em; }
-.roles p + ul { margin-top: 10px; }
-.roles ul li { position: relative; padding-left: 20px; margin: 6px 0; }
-.roles ul li::before { content: ""; position: absolute; left: 1px; top: 0.72em; width: 5px; height: 5px; background: var(--blue); }
-.roles .more { display: inline-block; margin-top: 8px; font-family: var(--font-mono); font-size: 0.8rem; }
+.roles p { color: var(--ink-2); margin-bottom: 12px; max-width: 44em; }
 @media (max-width: 760px) {
-  .roles > li { grid-template-columns: 1fr; }
-  .roles .when { padding-top: 0; }
+  .role-row { grid-template-columns: minmax(0, 1fr) 24px; column-gap: 12px; }
+  .roles .when { grid-column: 1; grid-row: 1; padding-top: 0; }
+  .role-row > div:not(.when) { grid-column: 1 / -1; grid-row: 2; }
+  .role-row .project-arrow { padding-top: 0; line-height: 1; }
   .roles .when span { display: inline; }
   .roles .when span::before { content: " · "; }
 }
 
-/* ---------- Toolkit ---------- */
-.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 48px; border-top: 1px solid var(--rule); padding-top: 26px; }
-.skills h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px; }
-.skills ul { list-style: none; padding: 0; margin: 0; color: var(--ink-2); font-size: 0.95rem; }
-.skills li { margin: 5px 0; line-height: 1.5; }
-@media (max-width: 900px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 420px) { .skills { grid-template-columns: 1fr; } }
+/* ---------- Skills: one row each, linked to the work behind it ---------- */
+.section-head .label { text-align: right; }
+.skill-index { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.skill-index > li {
+  display: grid; grid-template-columns: 220px minmax(0, 1fr) auto; gap: 4px 40px; align-items: baseline;
+  padding: 15px 0; margin: 0; border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 35vh;
+}
+.skill-index h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0; transition: color 0.15s ease; }
+.skill-index .label { line-height: 1.6; }
+.skill-index .used { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; font-size: 0.93rem; }
+.skill-index .used a { text-decoration: none; white-space: nowrap; }
+.skill-index .used a::after { content: " ↗"; color: var(--ink-3); }
+/* Arriving from a skill link on a project or job marks that skill */
+.skill-index > li { position: relative; }
+.skill-index > li:target::before { content: ""; position: absolute; left: -14px; top: 12px; bottom: 12px; width: 2px; background: var(--orange); }
+.skill-index > li:target h3 { color: var(--orange); }
+@media (max-width: 760px) {
+  .skill-index > li { grid-template-columns: 1fr; padding: 16px 0; }
+  .skill-index .used { justify-content: flex-start; margin-top: 4px; }
+  .section-head .label { display: none; }
+}
 
 /* ---------- About / contact ---------- */
 .about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px 80px; border-top: 1px solid var(--rule); padding-top: 26px; }
@@ -262,6 +289,15 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.88em; }
 .project-head { padding: 40px 0 36px; }
 .project-head h1 { margin-top: 12px; }
 .project-head .lede { font-size: 1.15rem; color: var(--ink-2); max-width: 40em; }
+.project-head .tags { margin-top: 22px; }
+.prose-section .tags { margin: -4px 0 16px; }
+.prose-section { scroll-margin-top: 16px; }
+
+/* "On this page" list for long job pages */
+.jump { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 0.93rem; }
+.jump li { margin: 0; }
+.jump a { text-decoration: none; }
+.jump a::before { content: "↓ "; color: var(--ink-3); }
 
 /* Spec strip */
 .spec {
@@ -313,7 +349,7 @@ code, kbd, .mono { font-family: var(--font-mono); font-size: 0.88em; }
 figure { margin: 24px 0; }
 figcaption { margin-top: 8px; font-size: 0.85rem; color: var(--ink-3); }
 figcaption::before { content: "FIG. "; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--blue); }
-.fig-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.fig-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
 .fig-row figure { margin: 0; }
 @media (max-width: 600px) { .fig-row { grid-template-columns: 1fr; } }
 

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ontario Power Generation — Joshua Paddock</title>
+  <meta name="description" content="Joshua Paddock's 16-month co-op in Fuel Handling engineering at Ontario Power Generation: Python tools for motor testing, a drip-tray redesign, workflow automation, a local LLM, and field leadership on a relay-panel overhaul.">
+  <meta name="robots" content="noindex"><!-- delete at launch -->
+  <meta name="theme-color" content="#02070A">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../">Joshua Paddock</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../#projects">Projects</a>
+        <a href="../#experience" class="nav-optional">Experience</a>
+        <a href="../#about" class="nav-optional">About</a>
+        <a href="../assets/files/Joshua-Paddock-Resume.pdf">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="crumbs"><a href="../#experience">← All experience</a></div>
+
+    <!-- HOW TO FILL THIS PAGE IN
+         Each numbered section is one piece of work. Replace the yellow TODO
+         notes with the longer story, and swap each <div class="ph"> for an
+         <img>, <video controls> or a YouTube <iframe> once OPG has approved
+         the photo or video. Delete the "Media" note below when they're in. -->
+
+    <header class="project-head">
+      <span class="label">Experience · 16-month co-op</span>
+      <h1>Ontario Power Generation</h1>
+      <p class="lede">Sixteen months in Fuel Handling engineering, supporting the fuelling machines: Python tools for motor testing and research data, a mechanical redesign taken from prototype to fit checks on eight machines, automation that replaced manual tracking, and field leadership on a relay-panel overhaul.</p>
+
+      <dl class="spec">
+        <div><dt class="label">Role</dt><dd>Fuel Handling Engineering Student</dd></div>
+        <div><dt class="label">Dates</dt><dd>Apr 2025 – Aug 2026</dd></div>
+        <div><dt class="label">Location</dt><dd>Bowmanville, ON</dd></div>
+        <div><dt class="label">Tools</dt><dd>Python, Power Automate, Power Apps, SQL, CAD, 3D printing, Llama 3.1</dd></div>
+      </dl>
+
+      <ul class="jump" aria-label="On this page">
+        <li><a href="#heat-maps">Motor bench-test heat maps</a></li>
+        <li><a href="#drip-tray">Drip-tray redesign</a></li>
+        <li><a href="#local-llm">Local LLM</a></li>
+        <li><a href="#tracker">Corrective-action tracker</a></li>
+        <li><a href="#trolley-study">Trolley-coasting study</a></li>
+        <li><a href="#relay-panel">Relay-panel overhaul</a></li>
+      </ul>
+    </header>
+
+    <section class="tldr" aria-label="Headline results">
+      <div><span class="label">Motor testing</span><p class="metric">8 machines</p><p>Heat maps from machine logs set the bench-test conditions for new inverter-driven motors, signed off by senior engineering.</p></div>
+      <div><span class="label">Automation</span><p class="metric">50% fewer meetings</p><p>An automated corrective-action tracker ended management follow-ups.</p></div>
+      <div><span class="label">Field leadership</span><p class="metric">96 hours saved</p><p>As field Modification Team Leader on a $19M relay-panel overhaul.</p></div>
+    </section>
+
+    <p class="note"><strong>Media</strong>Photos and videos of the working prototypes will be added here once OPG has approved them.</p>
+
+    <article class="prose">
+      <section class="prose-section" id="heat-maps">
+        <h2><span class="num">01</span> Bench-test conditions for new motors</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-programming">Programming</a></p>
+        <p>The fuelling machines were getting new inverter-driven motors, and the bench tests had to cover the right
+        inverter commands. I built a Python validation tool that turns raw machine logs into command-density fields
+        for X, Y and rotational motion, drawn as Gaussian heat maps that show which commands needed to be tested.</p>
+        <p>The heat maps defined the bench-testing conditions for the new motors across <strong>8 fuelling
+        machines</strong>, and senior engineering signed off on the results.</p>
+        <figure><div class="ph" data-label="Figure · command-density heat map (pending approval)"></div><figcaption>Command density across X, Y and rotational motion.</figcaption></figure>
+        <p><span class="todo">TODO: how the logs were parsed, why Gaussian smoothing, and what the bench tests looked like before and after.</span></p>
+      </section>
+
+      <section class="prose-section" id="drip-tray">
+        <h2><span class="num">02</span> Heavy-water drip-tray redesign</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-mechanical-design">Mechanical design</a> <a href="../#skill-prototyping">Prototyping</a></p>
+        <p>I redesigned a heavy-water (D<sub>2</sub>O) drip tray that protects the Z-axis motors of the fuelling
+        machine. Rapid 3D-printed prototypes let me work out an adaptive mounting configuration and test it in
+        the field for fit and size. The design includes a custom gamma-resistant cable guard rated for a
+        <strong>40-year life</strong>.</p>
+        <p>The final design was validated for fit on <strong>8 machines</strong> with zero impact on travel range.</p>
+        <div class="fig-row">
+          <figure><div class="ph short" data-label="CAD · drip tray and cable guard (pending approval)"></div><figcaption>The redesigned tray and cable guard.</figcaption></figure>
+          <figure><div class="ph short" data-label="Photo · prototype fit check (pending approval)"></div><figcaption>A printed prototype during a fit check.</figcaption></figure>
+        </div>
+        <p><span class="todo">TODO: what was wrong with the old tray, the design constraints, how many prototype rounds, and the material choice for the cable guard.</span></p>
+      </section>
+
+      <section class="prose-section" id="local-llm">
+        <h2><span class="num">03</span> Local LLM for proprietary data</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-ml-systems">ML systems</a></p>
+        <p>I deployed a quantized Llama 3.1 8B model for CPU-only local inference, so proprietary data stayed
+        on-premises. Fuzzy-matched keyword extraction cut down what the model had to process, which kept
+        compute use low.</p>
+        <p><span class="todo">TODO: which workflow it automated, the quantization level and runtime, speed on the hardware you had, and how you checked its output.</span></p>
+      </section>
+
+      <section class="prose-section" id="tracker">
+        <h2><span class="num">04</span> Corrective-action tracker</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-automation">Automation</a></p>
+        <p>I created the Fuel Handling team's first single source of truth for failure-screening corrective
+        actions: an engineer-validated tracker built on Power Automate flows and Power Apps, with backend SQL
+        pulls bringing in the data. Once it was in place, nobody had to maintain it by hand.</p>
+        <p>It ended management follow-ups and cut meetings by <strong>50%</strong>.</p>
+        <figure><div class="ph short" data-label="Screenshot · tracker view (pending approval)"></div><figcaption>The corrective-action tracker.</figcaption></figure>
+        <p><span class="todo">TODO: how tracking worked before, how the flow runs end to end, and who uses it.</span></p>
+      </section>
+
+      <section class="prose-section" id="trolley-study">
+        <h2><span class="num">05</span> Trolley-coasting study</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-programming">Programming</a> <a href="../#skill-field-leadership">Field leadership</a></p>
+        <p>I led field data collection for a University of Waterloo / UNENE trolley-coasting study, groundwork
+        for a planned <strong>$5.6M</strong> predictive-maintenance initiative. In Python, I reconstructed trolley
+        position from raw Gray-code encoder signals and validated the collected data for the research team's
+        analysis.</p>
+        <figure><div class="ph short" data-label="Plot · reconstructed trolley position (pending approval)"></div><figcaption>Trolley position reconstructed from the encoder signals.</figcaption></figure>
+        <p><span class="todo">TODO: how the data was collected, how the Gray-code decoding and validation worked, and what the study is looking for.</span></p>
+      </section>
+
+      <section class="prose-section" id="relay-panel">
+        <h2><span class="num">06</span> Relay-panel overhaul</h2>
+        <p class="tags"><span>Skills</span> <a href="../#skill-field-leadership">Field leadership</a></p>
+        <p>I was the sole engineering field Modification Team Leader (MTL) for one of three execution windows in
+        a <strong>$19M</strong> relay-panel overhaul covering about 600 relays. I coordinated with remote
+        engineering teams to troubleshoot schematics in real time, resolving delays that saved
+        <strong>96 hours</strong> of project time.</p>
+        <p><span class="todo">TODO: what the MTL role involves day to day, and one example of a problem you resolved on the spot.</span></p>
+      </section>
+    </article>
+
+    <nav class="project-foot" aria-label="Page navigation">
+      <a href="../#experience">← All experience</a>
+      <a href="#main">Back to top ↑</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Joshua Paddock</span>
+    </div>
+  </footer>
+</body>
+</html>

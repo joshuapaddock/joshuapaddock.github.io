@@ -43,6 +43,7 @@
         <div><dt class="label">Role</dt><dd>Solo</dd></div>
         <div><dt class="label">Tools</dt><dd>ACT, PyTorch, LeRobot, Python, Feetech bus servos, 3D printing, Isaac Sim, Jetson Orin Nano Super</dd></div>
       </dl>
+      <p class="tags"><span>Skills</span> <a href="../#skill-robot-learning">Robot learning</a> <a href="../#skill-ml-systems">ML systems</a> <a href="../#skill-programming">Programming</a> <a href="../#skill-embedded">Embedded</a> <a href="../#skill-prototyping">Prototyping</a></p>
     </header>
     <figure class="hero-media">
       <div class="ph" data-label="Video · 10–20 s · the ACT policy doing the pick-and-place on its own"></div>
@@ -84,7 +85,7 @@
         <p>The policy is ACT (Action Chunking with Transformers), trained with PyTorch and LeRobot. It predicts short chunks of future joint actions from the camera images and joint states.</p>
         <p><span class="todo">TODO: recording format, frame rate, number of episodes, training time, and success rate over N trials.</span></p>
       </section>
-      <section class="prose-section">
+      <section class="prose-section" id="edge-inference">
         <h2><span class="num">04</span> Edge inference on the Jetson</h2>
         <p>Alongside the arm, I deployed and benchmarked quantized LLMs on a Jetson Orin Nano Super to see what fits
         under edge memory and thermal limits. The longer-term goal is a language interface that calls the arm's

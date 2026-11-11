@@ -61,8 +61,9 @@
 
     <!-- ============ PROJECTS ============
          Ordered by relevance to the roles you're targeting.
-         To add a project: copy one <li> block below, then
-         copy drafts/_project-template.html into projects/ and fill it in. -->
+         To add a project: copy one <li> block, copy an existing page in
+         projects/ and fill it in. The skill links under each project point
+         at the Skills list further down; add the project there as well. -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head">
@@ -70,83 +71,60 @@
         </div>
 
         <ul class="projects">
-          <li>
-            <a class="project" href="projects/so-arm101.html">
-              <div>
-                <h3>SO-ARM101 leader–follower arm</h3>
-                <p>Self-built teleoperation arm pair with wrist and overhead cameras. I recorded demonstrations and trained an ACT imitation-learning policy that runs the pick-and-place on its own; next, residual RL fine-tuning (ResFiT) to close its gaps.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Featured&nbsp;· Personal</span>
-                <span class="label">ACT&nbsp;· PyTorch&nbsp;· LeRobot&nbsp;· Residual&nbsp;RL</span>
-                <span class="status wip">In progress</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
+          <li class="project">
+            <div>
+              <h3><a href="projects/so-arm101.html">SO-ARM101 leader–follower arm</a></h3>
+              <p>Self-built teleoperation arm pair with wrist and overhead cameras. I recorded demonstrations and trained an ACT imitation-learning policy that runs the pick-and-place on its own; next, residual RL fine-tuning (ResFiT) to close its gaps.</p>
+            </div>
+            <div class="project-meta">
+              <span class="label">Featured&nbsp;· Personal</span>
+              <span class="tags"><a href="#skill-robot-learning">Robot learning</a> <a href="#skill-ml-systems">ML systems</a> <a href="#skill-programming">Programming</a> <a href="#skill-embedded">Embedded</a> <a href="#skill-prototyping">Prototyping</a></span>
+              <span class="status wip">In progress</span>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
-            <a class="project" href="projects/capstone.html">
-              <div>
-                <h3>Adaptive routing for LLM inference clusters</h3>
-                <p>Measuring mixture-of-experts expert skew on SWE-bench inputs to plan expert placement across a 72-GPU rack, with a custom router that uses prefix-aware caching (SGLang / vLLM) to maximize GPU utilization.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Capstone&nbsp;· Team of 5</span>
-                <span class="label">MoE inference&nbsp;· SGLang&nbsp;/&nbsp;vLLM&nbsp;· Stochastic control</span>
-                <span class="status wip">In progress</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
+          <li class="project">
+            <div>
+              <h3><a href="projects/capstone.html">Adaptive routing for LLM inference clusters</a></h3>
+              <p>Measuring mixture-of-experts expert skew on SWE-bench inputs to plan expert placement across a 72-GPU rack, with a custom router that uses prefix-aware caching (SGLang / vLLM) to maximize GPU utilization.</p>
+            </div>
+            <div class="project-meta">
+              <span class="label">Capstone&nbsp;· Team of 5</span>
+              <span class="tags"><a href="#skill-ml-systems">ML systems</a> <a href="#skill-controls">Controls</a></span>
+              <span class="status wip">In progress</span>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
-            <a class="project" href="projects/control-lab.html">
-              <div>
-                <h3>Identifying &amp; stabilizing an unknown plant</h3>
-                <p>System identification of a black-box plant, then PID design and verification in the frequency domain.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Coursework</span>
-                <span class="label">System ID&nbsp;· PID&nbsp;· Frequency domain</span>
-                <span class="status done">Complete</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
+          <li class="project">
+            <div>
+              <h3><a href="projects/control-lab.html">Identifying &amp; stabilizing an unknown plant</a></h3>
+              <p>System identification of a black-box plant, then PID design and verification in the frequency domain.</p>
+            </div>
+            <div class="project-meta">
+              <span class="label">Coursework</span>
+              <span class="tags"><a href="#skill-controls">Controls</a></span>
+              <span class="status done">Complete</span>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
-            <a class="project" href="projects/pi-camera.html">
-              <div>
-                <h3>Raspberry Pi camera</h3>
-                <p>A custom camera: enclosure CAD, hardware, and an image-capture pipeline with its own capture policies.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Personal</span>
-                <span class="label">Raspberry Pi&nbsp;· Circuit design&nbsp;· Python</span>
-                <span class="status done">Complete</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
+          <li class="project">
+            <div>
+              <h3><a href="projects/pi-camera.html">Raspberry Pi camera</a></h3>
+              <p>A custom camera: enclosure CAD, hardware, and an image-capture pipeline with its own capture policies.</p>
+            </div>
+            <div class="project-meta">
+              <span class="label">Personal</span>
+              <span class="tags"><a href="#skill-embedded">Embedded</a> <a href="#skill-mechanical-design">Mechanical design</a> <a href="#skill-programming">Programming</a></span>
+              <span class="status done">Complete</span>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
-            <a class="project" href="projects/breathalyzer.html">
-              <div>
-                <h3>MQ-3 breathalyzer</h3>
-                <p>Metal-oxide alcohol sensing, from burn-in and calibration to a live reading on a display.</p>
-              </div>
-              <div class="project-meta">
-                <span class="label">Personal</span>
-                <span class="label">ESP32&nbsp;· Sensor calibration</span>
-                <span class="status done">Complete</span>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </a>
-          </li>
-          <!-- OPG and Motion Pac case studies live in drafts/ until approved.
-               When cleared, move the page into projects/ and add a row here. -->
         </ul>
       </div>
     </section>
 
-    <!-- ============ EXPERIENCE ============ -->
+    <!-- ============ EXPERIENCE ============
+         Each job opens its own page in experience/ with the full story. -->
     <section class="section" id="experience">
       <div class="container">
         <div class="section-head">
@@ -154,84 +132,98 @@
         </div>
 
         <ol class="roles">
-          <li>
+          <li class="role-row">
             <div class="when">Apr 2025 – Aug 2026<span>Bowmanville, ON</span></div>
             <div>
-              <h3>Ontario Power Generation</h3>
+              <h3><a href="experience/opg.html">Ontario Power Generation</a></h3>
               <div class="role">Fuel Handling Engineering Student&nbsp;· 16-month co-op</div>
-              <p>Mechanical design, data tooling and field work supporting the fuelling machines.</p>
-              <ul>
-                <li>Automated data collection and reporting with Power Automate flows, Power Apps and backend SQL pulls: once set up, they turn engineering data into management insight with no manual upkeep.</li>
-                <li>Built Python tools for engineering problems, including validation of collected encoder data and Gaussian heat maps mapping which inverter commands needed testing on new motors.</li>
-                <li>Designed parts in CAD, including a radiation-tolerant component redesign, and tested prototypes in the field for fit and size.</li>
-                <li>Automated workflows with locally hosted LLMs.</li>
-                <li>Led the field team on a relay-panel overhaul.</li>
-              </ul>
-              <!-- Enable once OPG approves the case study:
-              <a class="more" href="projects/opg.html">Case study →</a> -->
+              <p>Python tools that set bench-test conditions for new motors on 8 fuelling machines, a drip-tray redesign rated for a 40-year life, a Power Automate tracker that cut meetings by 50%, and field lead on one window of a $19M relay-panel overhaul.</p>
+              <span class="tags"><a href="#skill-programming">Programming</a> <a href="#skill-automation">Automation</a> <a href="#skill-ml-systems">ML systems</a> <a href="#skill-mechanical-design">Mechanical design</a> <a href="#skill-prototyping">Prototyping</a> <a href="#skill-field-leadership">Field leadership</a></span>
             </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
+          <li class="role-row">
             <div class="when">May – Aug 2024<span>Cobourg, ON</span></div>
             <div>
-              <h3>Motion Pac International</h3>
+              <h3><a href="experience/motion-pac.html">Motion Pac International</a></h3>
               <div class="role">Mechanical Engineer Intern</div>
-              <ul>
-                <li>Designed custom automation machinery in SolidWorks across 12+ projects, including pneumatic capping, deburring and conveyor handling equipment.</li>
-                <li>Proposed an automated weld and leak-test system.</li>
-              </ul>
-              <!-- Enable once Motion Pac approves:
-              <a class="more" href="projects/motion-pac.html">Case study →</a> -->
+              <p>Designed custom automation machinery in SolidWorks across 12+ projects, and led an automated weld and leak-test solution with a projected 8-month ROI.</p>
+              <span class="tags"><a href="#skill-mechanical-design">Mechanical design</a></span>
             </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
-          <li>
+          <li class="role-row">
             <div class="when">Summers 2022 &amp; 2023<span>Cobourg, ON</span></div>
             <div>
-              <h3>Spoolon Manufacturing</h3>
+              <h3><a href="experience/spoolon.html">Spoolon Manufacturing</a></h3>
               <div class="role">Mechanical Engineer Intern</div>
-              <ul>
-                <li>Digitized 250+ legacy tooling drawings in AutoCAD.</li>
-                <li>Used FEA to place relief holes that cut spool material use by 5%.</li>
-              </ul>
+              <p>Digitized 250+ legacy stamp and die drawings in AutoCAD and used SolidWorks FEA to cut spool material waste by 5%.</p>
+              <span class="tags"><a href="#skill-mechanical-design">Mechanical design</a></span>
             </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
           </li>
         </ol>
       </div>
     </section>
 
     <!-- ============ SKILLS ============
-         Ordered by what you want to be hired for: strongest first. -->
+         One row per skill: name, the tools behind it, and the work that
+         proves it. Keep the "used in" links in step with the skill links
+         on each project and job above. Strongest first. -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head">
           <h2>Skills</h2>
+          <span class="label">Each one links to the work behind it</span>
         </div>
-        <div class="skills">
-          <div>
+
+        <ul class="skill-index">
+          <li id="skill-robot-learning">
             <h3>Robot learning</h3>
-            <ul><li>Imitation learning: ACT with PyTorch &amp; LeRobot</li><li>Teleoperation &amp; demonstration data</li><li>Residual RL fine-tuning (ResFiT, in progress)</li></ul>
-          </div>
-          <div>
-            <h3>Controls &amp; math</h3>
-            <ul><li>Control theory (MTHE 430)</li><li>Stochastic processes (MTHE 455)</li><li>PID &amp; frequency-domain design</li><li>System identification</li><li>Optimal control, dec-POMDPs</li><li>MATLAB</li></ul>
-          </div>
-          <div>
+            <span class="label">ACT&nbsp;· PyTorch&nbsp;· LeRobot&nbsp;· Teleoperation</span>
+            <span class="used"><a href="projects/so-arm101.html">SO-ARM101 arm</a></span>
+          </li>
+          <li id="skill-controls">
+            <h3>Controls</h3>
+            <span class="label">System&nbsp;ID&nbsp;· PID&nbsp;· Stochastic control&nbsp;· MTHE&nbsp;430&nbsp;/&nbsp;455</span>
+            <span class="used"><a href="projects/capstone.html">Capstone</a> <a href="projects/control-lab.html">Control lab</a></span>
+          </li>
+          <li id="skill-ml-systems">
             <h3>ML systems</h3>
-            <ul><li>Mixture-of-experts inference</li><li>Expert placement &amp; request routing</li><li>SGLang, vLLM, prefix-aware caching</li><li>Local &amp; edge LLM inference (Jetson)</li></ul>
-          </div>
-          <div>
-            <h3>Software &amp; automation</h3>
-            <ul><li>Python: data validation, analysis &amp; visualization</li><li>PyTorch, pandas, scikit-learn</li><li>Power Automate, Power Apps, SQL</li><li>C++, C</li><li>ROS 2</li></ul>
-          </div>
-          <div>
+            <span class="label">MoE inference&nbsp;· SGLang&nbsp;/&nbsp;vLLM&nbsp;· Local&nbsp;LLMs</span>
+            <span class="used"><a href="projects/capstone.html">Capstone</a> <a href="experience/opg.html#local-llm">OPG</a> <a href="projects/so-arm101.html#edge-inference">SO-ARM101 arm</a></span>
+          </li>
+          <li id="skill-programming">
+            <h3>Programming</h3>
+            <span class="label">Python&nbsp;· C++&nbsp;· C&nbsp;· MATLAB&nbsp;· ROS&nbsp;2</span>
+            <span class="used"><a href="experience/opg.html#heat-maps">OPG</a> <a href="projects/so-arm101.html">SO-ARM101 arm</a> <a href="projects/pi-camera.html">Pi camera</a></span>
+          </li>
+          <li id="skill-automation">
+            <h3>Automation</h3>
+            <span class="label">Power Automate&nbsp;· Power Apps&nbsp;· SQL</span>
+            <span class="used"><a href="experience/opg.html#tracker">OPG</a></span>
+          </li>
+          <li id="skill-mechanical-design">
             <h3>Mechanical design</h3>
-            <ul><li>SolidWorks, GD&amp;T</li><li>FEA</li><li>AutoCAD drawings</li><li>Prototyping &amp; field fit testing</li><li>3D printing, pneumatics</li></ul>
-          </div>
-          <div>
-            <h3>Electronics &amp; embedded</h3>
-            <ul><li>Jetson Orin Nano Super</li><li>ESP32, Raspberry Pi</li><li>Serial bus servos</li><li>Sensor integration &amp; calibration</li></ul>
-          </div>
-        </div>
+            <span class="label">SolidWorks&nbsp;· GD&amp;T&nbsp;· FEA&nbsp;· AutoCAD</span>
+            <span class="used"><a href="experience/opg.html#drip-tray">OPG</a> <a href="experience/motion-pac.html">Motion Pac</a> <a href="experience/spoolon.html">Spoolon</a> <a href="projects/pi-camera.html">Pi camera</a></span>
+          </li>
+          <li id="skill-prototyping">
+            <h3>Prototyping</h3>
+            <span class="label">3D printing&nbsp;· Field fit testing</span>
+            <span class="used"><a href="experience/opg.html#drip-tray">OPG</a> <a href="projects/so-arm101.html">SO-ARM101 arm</a></span>
+          </li>
+          <li id="skill-embedded">
+            <h3>Embedded</h3>
+            <span class="label">Jetson Orin Nano Super&nbsp;· Raspberry&nbsp;Pi&nbsp;· ESP32</span>
+            <span class="used"><a href="projects/so-arm101.html">SO-ARM101 arm</a> <a href="projects/pi-camera.html">Pi camera</a></span>
+          </li>
+          <li id="skill-field-leadership">
+            <h3>Field leadership</h3>
+            <span class="label">Modification Team Leader&nbsp;· Field data collection</span>
+            <span class="used"><a href="experience/opg.html#relay-panel">OPG</a></span>
+          </li>
+        </ul>
       </div>
     </section>
 
